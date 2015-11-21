@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 763de3c0ccec8f84394630f2d022385f
+timeCreated: 1448060391
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - platform: {instanceID: 0}
+  - Bird1: {fileID: 184368, guid: 6aaa96dbd60bbbd4fb5d903ac2638e3d, type: 2}
+  - Bird2: {fileID: 179686, guid: f95bb1736f7eece47bf1a1cce123df85, type: 2}
+  - Bird3: {fileID: 190750, guid: 22e897a028c271f40908c1d8124a242c, type: 2}
+  - Bird4: {fileID: 146598, guid: 1ac26d20e22d4e646a027cd10efe0cd6, type: 2}
+  - Bat: {instanceID: 0}
+  - scoreText: {instanceID: 0}
+  - restartText: {instanceID: 0}
+  - livesText: {instanceID: 0}
+  - Timer: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
