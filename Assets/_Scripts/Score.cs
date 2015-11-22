@@ -40,20 +40,16 @@ public class Score : MonoBehaviour
         //If the police collects the coin then score is updated
         if (other.tag == "Coin")
         {
-
-            coin.Play();
-            gameController.AddScore(scoreValue);
+            if (!gameController.gameOver)
+            {
+                //No points added if player is dead
+                coin.Play();
+                Destroy(other.transform.gameObject);
+                gameController.AddScore(scoreValue);
+            }
             // Destroy(gameObject);
         }
 
-        //If the police collects the coin then score is updated
-        if (other.tag == "Enemy")
-        {
-
-            die.Play();
-            gameController.lives--;
-            // Destroy(gameObject);
-        }
 
     }
 }

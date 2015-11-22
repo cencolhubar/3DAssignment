@@ -34,7 +34,7 @@ public class SpawnManager : MonoBehaviour {
     public Text Timer;
     public int time;
 
-    private bool gameOver;
+    public bool gameOver;
     private bool restart;
     public int score;
     public int lives=3;
@@ -57,8 +57,8 @@ public class SpawnManager : MonoBehaviour {
          for (int i = 0; i < maxPlatforms; i++)
         //if(spawn)
         {
-            Vector3 randomPosition = new Vector3(Random.Range(90, 300), 35f, Random.Range(50, 300));
-            Instantiate(platform, randomPosition, Quaternion.identity);
+            Vector3 randomPosition = new Vector3(Random.Range(90, 300), 30f, Random.Range(50, 300));
+            Instantiate(platform, randomPosition, Quaternion.Euler(280,170,225));
         //    Instantiate(Bird1, randomPosition, Quaternion.identity);
           //  Instantiate(Bird2, randomPosition, Quaternion.identity);
           //  Instantiate(Bird3, randomPosition, Quaternion.identity);
@@ -100,7 +100,7 @@ public class SpawnManager : MonoBehaviour {
               //  Vector3 spawnPosition4 = new Vector3(Random.Range(spawnValues.x, spawnValues.x+55), spawnValues.y, spawnValues.z);
 
                 
-//Generates birds on screen
+//Generates enemies on screen
                 Instantiate(Bird1, spawnPosition1, spawnRotation);
                 Instantiate(Bird2, spawnPosition2, spawnRotation);
                 Instantiate(Bird3, spawnPosition3, spawnRotation);

@@ -2,7 +2,7 @@
 using System.Collections;
 
 /// <summary>
-/// This class kills the player when he falls into the abyss. After three tries the game is over
+/// This class kills the player when he collides with dinosaurs. After three tries the game is over
 /// </summary>
 
 public class DeathTrigger : MonoBehaviour {
@@ -28,12 +28,14 @@ public class DeathTrigger : MonoBehaviour {
         }
     }
 
+    //Kills player
     void OnTriggerExit(Collider other)
-    {
+    
+        {
 
         
         
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Player"))
         { sound.Play();
             gameController.lives--;
             gameController.UpdateLives();
@@ -47,6 +49,11 @@ public class DeathTrigger : MonoBehaviour {
            else if (gameController.lives <= 0)
             {
                 gameController.lives = 0;
+                GameObject player = other.gameObject;
+
+               // player.GetComponent<Transform>().position = new Vector3(220,34, 88);
+              //  player.GetComponent<Rigidbody>().isKinematic = true;
+               // player.GetComponent<Rigidbody>().useGravity = false;
                 gameController.GameOver();
                
 

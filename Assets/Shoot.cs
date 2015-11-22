@@ -12,6 +12,7 @@ public class Shoot : MonoBehaviour
   //  public Animator animator;
     public AudioSource bulletFireSound;
     public AudioSource bulletImpactSound;
+    public AudioSource dieSound;
     public GameObject explosion;
 
     public SpawnManager gameController;
@@ -73,9 +74,14 @@ public class Shoot : MonoBehaviour
                 if (hit.transform.CompareTag("Enemy"))
                 {
                     // Destroy Barrel object upon hit
+                    this.dieSound.Play();
                     Destroy(hit.transform.gameObject);
                     Instantiate(this.explosion, hit.point, Quaternion.identity);
-                    this.gameController.AddScore(100);
+                    if (!gameController.gameOver)
+                    {
+                        //No points added if player is dead
+                        this.gameController.AddScore(1000);
+                    }
                 }
 
 
